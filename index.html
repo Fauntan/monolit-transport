@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ООО "Монолит" - Автобусные перевозки</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.jpg" alt="Логотип ООО Монолит" class="logo-image">
+                <div class="logo-text">
+                    <h1>ООО "Монолит"</h1>
+                    <p>Автобусные перевозки в вашем городе</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">О компании</a></li>
+                    <li><a href="#routes">Маршруты</a></li>
+                    <li><a href="#fleet">Подвижной состав</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Комфортабельные автобусы<br>по фиксированным маршрутам</h2>
+            <a href="#routes" class="btn">Посмотреть маршруты</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>О компании</h2>
+            <p>ООО "Монолит" осуществляет пассажирские перевозки с 3 ноября 2020 года. Наша компания предоставляет
+                услуги по перевозке пассажиров на комфортабельных автобусах по городским и пригородным маршрутам.</p>
+            <p>Мы стремимся к обеспечению высокого уровня сервиса и безопасности наших пассажиров.</p>
+        </div>
+    </section>
+
+    <section id="routes" class="routes">
+        <div class="container">
+            <h2>Наши маршруты</h2>
+            <div class="route-list">
+                <div class="route-card" onclick="showRouteDetails(6)" data-route-image="images/route-6-map.png">
+                    <h3>Маршрут №6</h3>
+                    <p>Ж/д вокзал - Банк - Завод ЖБК</p>
+                    <p><strong>Интервал движения:</strong> 15-20 минут</p>
+                    <p><strong>Время работы:</strong> 6:00 - 23:00</p>
+                </div>
+
+                <div class="route-card" onclick="showRouteDetails(104)" data-route-image="images/route-104-map.png">
+                    <h3>Маршрут №104</h3>
+                    <p>ЖТУ - ЖД Вокзал г.Приволжск - Завод ЖБК</p>
+                    <p><strong>Интервал движения:</strong> 20 минут</p>
+                    <p><strong>Время работы:</strong> 5:30 - 22:30</p>
+                </div>
+
+                <div class="route-card" onclick="showRouteDetails(529)" data-route-image="images/route-529-map.png">
+                    <h3>Маршрут №529</h3>
+                    <p>ЖД Вокзал г.Приволжск - ОКБ Мирного - ЖД Вокзал г.Мирный</p>
+                    <p><strong>Интервал движения:</strong> 30 минут</p>
+                    <p><strong>Время работы:</strong> 5:00 - 24:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="fleet" class="fleet">
+        <div class="container">
+            <h2>Наш подвижной состав</h2>
+            <div class="fleet-list">
+                <div class="bus-card">
+                    <img src="images/bus1.png" alt="ПАЗ-32054">
+                    <h3>ПАЗ-32054</h3>
+                    <p>Год выпуска: 2020</p>
+                    <p>Количество мест: 43</p>
+                </div>
+                <div class="bus-card">
+                    <img src="images/bus2.png" alt="ЛиАЗ-5292">
+                    <h3>ЛиАЗ-5292</h3>
+                    <p>Год выпуска: 2016</p>
+                    <p>Количество мест: 85</p>
+                </div>
+                <div class="bus-card">
+                    <img src="images/bus3.png" alt="МАЗ-203">
+                    <h3>МАЗ-203</h3>
+                    <p>Год выпуска: 2013</p>
+                    <p>Количество мест: 65</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="contacts">
+        <div class="container">
+            <h2>Контакты</h2>
+            <div class="contact-info">
+                <div>
+                    <h3>Адрес</h3>
+                    <p>г. Приволжск, Офисный сектор</p>
+                </div>
+                <div>
+                    <h3>Телефон</h3>
+                    <p>+7 (123) 456-78-90</p>
+                </div>
+                <div>
+                    <h3>Email</h3>
+                    <p>https://vk.com/ooomonolith</p>
+                </div>
+                <div>
+                    <h3>Режим работы</h3>
+                    <p>Пн-Пт: Круглосуточно</p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 ООО "Монолит". Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Модальное окно с деталями маршрута -->
+    <div id="routeModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
